@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/homepage.css') }}">
+    
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <link rel="stylesheet" href="/static/css/header.css">
+    <link rel="stylesheet" href="/static/css/homepage.css">
+    
+    <title>Document</title>
+</head>
+<body>
+    <div id="content">
+        <header>
+            <div id="back">
+                <img src="/static/img/back.png" alt="back">
+            </div>
+            <div id="city_name">
+                <p>{{ city }}</p>
+            </div>
+        </header>
+        <div id="top_content">
+            <div id="sub_content">
+                <div id="image"><img src="/static/img/sun.gif" alt="image"></div>
+                <div id="temp"><p>30°c</p></div>
+            </div>
+        </div>
+        <div id="bottom_content">
+
+        </div>
+    </div>
+</body>
+</html>
