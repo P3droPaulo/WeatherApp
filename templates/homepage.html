@@ -16,24 +16,42 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="content">
-        <header>
-            <div id="back">
-                <img src="/static/img/back.png" alt="back">
-            </div>
-            <div id="city_name">
-                <p>{{ city }}</p>
-            </div>
-        </header>
-        <div id="top_content">
-            <div id="sub_content">
-                <div id="image"><img src="/static/img/sun.gif" alt="image"></div>
-                <div id="temp"><p>30°c</p></div>
-            </div>
-        </div>
-        <div id="bottom_content">
-
-        </div>
+  <header>
+    <div id="back">
+      <a href="">
+        <img src="https://cdn-icons-png.flaticon.com/128/130/130882.png" alt="image">
+      </a>
     </div>
+    <div id="title">
+      <p>Previsão do Tempo</p>
+    </div>
+  </header>
+  <div id="content">
+    <div id="image">
+      <img src="{{ url_for('static', filename='img/storm.gif') }}" alt="image">
+    </div>
+    <div id="temp">
+      <p>{{temp}}°c</p>
+    </div>
+    <div id="city">
+      <p>{{city}}</p>
+    </div>
+  </div>
+  <div id="sub_content">
+    <div id="cards">
+      <div id="data">
+        <p>22°c</p>
+        <p id="text">Sensação</p>
+      </div>
+      <div id="data-mid">
+        <p>{{humidity}}%</p>
+        <p id="text">Umidade</p>
+      </div>
+      <div id="data">
+        <p>{{pressure}}mbar</p>
+        <p id="text">Pressão</p>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
