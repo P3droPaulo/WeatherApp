@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/homepage.css') }}">
+    
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <link rel="stylesheet" href="/static/css/header.css">
+    <link rel="stylesheet" href="/static/css/homepage.css">
+    
+    <title>Weather App</title>
+</head>
+<body>
+  <header>
+    <div id="back">
+      <a href="">
+        <img src="https://cdn-icons-png.flaticon.com/128/130/130882.png" alt="image">
+      </a>
+    </div>
+    <div id="title">
+      <p>Previsão do Tempo</p>
+    </div>
+  </header>
+  <div id="content">
+    <div id="image">
+      <img src="{{ url_for('static', filename='img/storm.gif') }}" alt="image">
+    </div>
+    <div id="temp">
+      <p>{{temp}}°c</p>
+    </div>
+    <div id="city">
+      <p>{{city}}</p>
+    </div>
+  </div>
+  <div id="sub_content">
+    <div id="cards">
+      <div id="data">
+        <p>{{feels_like}}°c</p>
+        <p id="text">Sensação</p>
+      </div>
+      <div id="data-mid">
+        <p>{{humidity}}%</p>
+        <p id="text">Umidade</p>
+      </div>
+      <div id="data">
+        <p>{{pressure}}mbar</p>
+        <p id="text">Pressão</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
