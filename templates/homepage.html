@@ -28,27 +28,27 @@
   </header>
   <div id="content">
     <div id="image">
-      <img src="{{ url_for('static', filename='img/storm.gif') }}" alt="image">
+      <img src="static/img/{{img}}.gif" alt="image">
     </div>
     <div id="temp">
-      <p>{{temp}}°c</p>
+      <p>{{weatherData['celcius']}}°c</p>
     </div>
     <div id="city">
-      <p>{{city}}</p>
+      <p>{{weatherData['city']}}</p>
     </div>
   </div>
   <div id="sub_content">
     <div id="cards">
       <div id="data">
-        <p>{{feels_like}}°c</p>
+        <p>{{weatherData['feels_like']}}°c</p>
         <p id="text">Sensação</p>
       </div>
       <div id="data-mid">
-        <p>{{humidity}}%</p>
+        <p>{{weatherData['humidity']}}%</p>
         <p id="text">Umidade</p>
       </div>
       <div id="data">
-        <p>{{pressure}}mbar</p>
+        <p>{{weatherData['pressure']}}mbar</p>
         <p id="text">Pressão</p>
       </div>
     </div>
