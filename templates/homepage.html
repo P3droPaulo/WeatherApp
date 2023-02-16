@@ -17,40 +17,29 @@
 </head>
 <body>
   <header>
-    <div id="back">
-      <a href="">
-        <img src="https://cdn-icons-png.flaticon.com/128/130/130882.png" alt="image">
-      </a>
-    </div>
-    <div id="title">
-      <p>Previsão do Tempo</p>
-    </div>
   </header>
-  <div id="content">
-    <div id="image">
-      <img src="static/img/{{img}}.gif" alt="image">
+  <div id='first-line'>
+    <div id='main-block'>
     </div>
-    <div id="temp">
-      <p>{{weatherData['celcius']}}°c</p>
+    <div id='humidity-block'>
+      <p id='info-block'>{{data['humidity']}}%</p>
+      <p id='title-block'>Humidade</p>
+      <img id='img-block' src="https://cdn-icons-png.flaticon.com/512/427/427112.png" alt="image">
     </div>
-    <div id="city">
-      <p>{{weatherData['city']}}</p>
+    <div id='pressure-block'>
+      <p id='info-block'>{{data['pressure']}}mbar</p>
+      <p id='title-block'>Pressão</p>
+      <img id='img-block' src="https://cdn-icons-png.flaticon.com/512/4257/4257832.png" alt="image">
     </div>
-  </div>
-  <div id="sub_content">
-    <div id="cards">
-      <div id="data">
-        <p>{{weatherData['feels_like']}}°c</p>
-        <p id="text">Sensação</p>
-      </div>
-      <div id="data-mid">
-        <p>{{weatherData['humidity']}}%</p>
-        <p id="text">Umidade</p>
-      </div>
-      <div id="data">
-        <p>{{weatherData['pressure']}}mbar</p>
-        <p id="text">Pressão</p>
-      </div>
+    <div id='feels_like-block'>
+      <p id='info-block'>{{data['feels_like']}}ºc</p>
+      <p id='title-block'>Sensação</p>
+      <img id='img-block' src="https://cdn-icons-png.flaticon.com/512/2161/2161500.png" alt="image">
+    </div>
+    <div id='visibility-block'>
+      <p id='info-block'>{{data['visibility']}}</p>
+      <p id='title-block'>Visibilidade</p>
+      <img id='img-block' src="https://cdn-icons-png.flaticon.com/512/3313/3313998.png" alt="image">
     </div>
   </div>
 </body>

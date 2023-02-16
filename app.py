@@ -13,7 +13,7 @@ def homepage():
     print(img)
 
     if weatherRequest.error == 202:
-        return render_template('homepage.html', weatherData=weatherRequest.data,
+        return render_template('homepage.html', data=weatherRequest.data,
         img=img)
     elif weatherRequest.error == 404:
         return render_template('not_found.html')

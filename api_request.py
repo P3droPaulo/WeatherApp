@@ -20,11 +20,12 @@ class WeatherRequest():
             self.pressure = self.request['main']['pressure']
             self.feels_like = int(self.request['main']['feels_like'] - 273.15)
             self.main = self.request['weather'][0]['main']
+            self.visibility = self.request['visibility']
 
             self.data = {'city':self.city, 'celcius':self.celcius, 'description':self.description,
             'humidity':self.humidity, 'pressure':self.pressure, 'feels_like':self.feels_like,
-            'main':self.main}
+            'main':self.main, 'visibility':self.visibility}
 
 if __name__ == "__main__":
     app = WeatherRequest('Ouro Preto')
-    print(app.weatherData)
+    print(app.request)
