@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/icon.png') }}" type="image/x-icon">
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
@@ -19,10 +21,12 @@
 </head>
 <body>
   <div class='search-block'>
-    <input type="text" placeholder="Buscar">
-    <button type="submit">
-      <i class="fa fa-search"></i>
-    </button>
+    <form action="weather" method="POST">
+      <input id="city_name" name="city_name" type="text" placeholder="Buscar">
+      <button type="submit">
+        <i class="fa fa-search"></i>
+      </button>
+    </form>
   </div>
   <div class='main-block'>
     <div class='f-block'>
@@ -30,50 +34,45 @@
       <p>Agora em {{data['city'].title()}}</p>
     </div>
     <div class='s-block'>
-      <img src="https://cdn-icons-png.flaticon.com/512/414/414927.png" alt="img">
+      <img src="static/img/{{img}}.png" alt="img">
     </div>
     <div class='t-block'>
       <p class='temp'>{{data['celcius']}}°C</p>
-      <p>Sensação {{data['celcius']}}°C</p>
+      <p>Sensação {{data['feels_like']}}°C</p>
     </div>
   </div>
-  <div class='next-days'>
-    <p class='title-block'>Próximos 7 dias...</p>
-    <div class='days'>
-      <p>SEG</p>
-      <img src="https://cdn-icons-png.flaticon.com/512/414/414927.png" alt="image">
-      <p>19°C</p>
+  <div class='details-block'>
+    <p class='title-block'>Detalhes</p>
+    <div class='detail'>
+      <p>Humidade</p>
+      <img src="https://cdn-icons-png.flaticon.com/512/2828/2828802.png" alt="image">
+      <p>{{data['humidity']}}%</p>
     </div>
-    <div class='days'>
-      <p>TER</p>
-      <img src="https://cdn-icons-png.flaticon.com/512/414/414927.png" alt="image">
-      <p>19°C</p>
+    <div class='detail'>
+      <p>Pressão</p>
+      <img src="https://cdn-icons-png.flaticon.com/128/9218/9218189.png" alt="image">
+      <p>{{data['pressure']}}mbar</p>
     </div>
-    <div class='days'>
-      <p>QUA</p>
-      <img src="https://cdn-icons-png.flaticon.com/512/414/414927.png" alt="image">
-      <p>19°C</p>
+    <div class='detail'>
+      <p>Visibilidade</p>
+      <img src="https://cdn-icons-png.flaticon.com/512/2930/2930064.png" alt="image">
+      <p>{{data['visibility']}}%</p>
     </div>
-    <div class='days'>
-      <p>QUI</p>
-      <img src="https://cdn-icons-png.flaticon.com/512/414/414927.png" alt="image">
-      <p>19°C</p>
+    <div class='detail'>
+      <p>Vento</p>
+      <img src="https://cdn-icons-png.flaticon.com/512/2676/2676047.png" alt="image">
+      <p>{{data['wind_speed']}}Km/h</p>
     </div>
-    <div class='days'>
-      <p>SEX</p>
-      <img src="https://cdn-icons-png.flaticon.com/512/414/414927.png" alt="image">
-      <p>19°C</p>
+    <div class='detail'>
+      <p>MIN</p>
+      <img src="https://cdn-icons-png.flaticon.com/512/2996/2996023.png" alt="image">
+      <p>{{data['min']}}°C</p>
     </div>
-    <div class='days'>
-      <p>SÁB</p>
-      <img src="https://cdn-icons-png.flaticon.com/512/414/414927.png" alt="image">
-      <p>19°C</p>
+    <div class='detail'>
+      <p>MÁX</p>
+      <img src="https://cdn-icons-png.flaticon.com/512/2323/2323837.png" alt="image">
+      <p>{{data['max']}}°C</p>
     </div>
-    <div class='days'>
-      <p>DOM</p>
-      <img src="https://cdn-icons-png.flaticon.com/512/414/414927.png" alt="image">
-      <p>19°C</p>
-    </div>  
   </div>
 </body>
 </html>
