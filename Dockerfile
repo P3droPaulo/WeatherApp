@@ -1,5 +1,6 @@
 FROM python:3.6.1-alpine
+COPY . /app
 RUN pip install flask
 RUN pip install request
-COPY app.py /app.py
-CMD ["python","app.py"]
+WORKDIR /app
+CMD python app.py
