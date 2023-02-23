@@ -1,16 +1,5 @@
-
-# Use the official Python image as the base image
-FROM python:3.8
-
-# Set the working directory in the container
-WORKDIR /desktopapp
-
-# Copy the application files into the working directory
-COPY . /desktopapp
-
-# Install the application dependencies
-RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
-
-# Define the entry point for the container
-CMD ["flask", "run", "--host=0.0.0.0"]
+FROM python:3.6.1-alpine
+RUN pip install flask
+RUN pip install request
+COPY app.py /app.py
+CMD ["python","app.py"]
