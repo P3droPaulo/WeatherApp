@@ -1,7 +1,7 @@
 import requests
 
 class WeatherRequest():
-    def __init__(self, city, lang="pt-br"):
+    def __init__(self, city, lang="pt_br"):
         self.city = city
         self.lang = lang
 
@@ -20,12 +20,12 @@ class WeatherRequest():
             self.pressure = self.request['main']['pressure']
             self.feels_like = int(self.request['main']['feels_like'] - 273.15)
             self.main = self.request['weather'][0]['main']
-            self.visibility = self.request['visibility']
+            self.visibility = int((self.request['visibility'] * 100) / 10000)
 
             self.data = {'city':self.city, 'celcius':self.celcius, 'description':self.description,
             'humidity':self.humidity, 'pressure':self.pressure, 'feels_like':self.feels_like,
             'main':self.main, 'visibility':self.visibility}
 
 if __name__ == "__main__":
-    app = WeatherRequest('Ouro Preto')
-    print(app.request)
+    app = WeatherRequest('Ipatinga')
+    print(app.data)

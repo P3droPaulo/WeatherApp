@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def homepage():
-    city_input = 'Cachoeira do Campo'
+    city_input = 'Ipatinga'
     weatherRequest = WeatherRequest(city_input)
 
     img = weatherRequest.data['main']
