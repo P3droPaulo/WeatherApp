@@ -8,6 +8,7 @@ WORKDIR /
 COPY . /app
 
 # Install the application dependencies
+RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 # Define the entry point for the container
