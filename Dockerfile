@@ -5,7 +5,8 @@ FROM python:3.8
 COPY . /app
 
 # Install the application dependencies
-RUN pip install -r requirements.txt
+RUN python -m pip install --upgrade pip
+RUN python -m pip install -r requirements.txt
 
 # Set the working directory in the container
 WORKDIR /app
