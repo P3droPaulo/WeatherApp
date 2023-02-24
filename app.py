@@ -10,7 +10,6 @@ def homepage():
     weatherRequest = WeatherRequest(city_input)
 
     img = weatherRequest.data['main']
-    print(img)
 
     if weatherRequest.error == 202:
         return render_template('homepage.html', data=weatherRequest.data,
@@ -24,7 +23,6 @@ def buscar():
     weatherRequest = WeatherRequest(city_input)
 
     img = weatherRequest.data['main']
-    print(img)
 
     if weatherRequest.error == 202:
         return render_template('homepage.html', data=weatherRequest.data,
